@@ -1,0 +1,35 @@
+Run CMD.EXE as administrator
+
+1. Start the DiskPart program
+> DISKPART
+
+2. List numerals assigned to disks
+note the numeral assigned to your usb stick
+> LIST DISK 
+
+3. The numeral 2 will be used in this example
+> SELECT DISK 2
+
+4. Info shown will confirm the correctness of your selection
+> DETAIL DISK
+
+5. The entire usb stick will be overwritten with zeros
+> CLEAN ALL 
+
+6. Create a primary partition on the USB stick
+> CREATE PARTITION PRIMARY 
+
+7. Format the partition
+> FORMAT FS=NTFS 
+
+8. The partition can contain operating system startup files
+> ACTIVE 
+
+9. The next available letter is assigned to the USB stick
+> ASSIGN
+
+10. Exit from the DISKPART program
+> EXIT 
+
+11. Exit from the command shell 
+> EXIT 
